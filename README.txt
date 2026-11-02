@@ -4,3 +4,4 @@
 # This version is tested and working for Moodle v 4.5.15 - v 5.3.
 # This version implements AMD JS due to Moodle 5 depreciation of BootStrap access via UX.
 # This version has fix for edit link and adds label to edit mode view.
+# This version implements syntax updates for better user experience.
