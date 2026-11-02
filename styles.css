@@ -1,0 +1,76 @@
+/* Clickable section headers */
+.modtype_labelcollapsed .lc_section {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Optional: adjust number badge in title */
+.modtype_labelcollapsed .lc_section span {
+    font-weight: normal;
+}
+
+/* Base arrow icon — medium gray */
+.modtype_labelcollapsed .lc_section::after {
+    font-family: "FontAwesome";
+    font-weight: 400;
+    font: var(--fa-font-solid);
+    font-size: 25px;
+    color: #808080;
+    content: "\f0a9";
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Arrow icon: rotate and change to dark gray when expanded */
+.modtype_labelcollapsed .lc_section.show::after {
+    transform: rotateZ(90deg);
+    color: #333333;
+}
+
+/* Reveal animation for collapsible content (scoped!) */
+.modtype_labelcollapsed .collapse {
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    max-height: 0;
+    display: block !important;
+}
+
+.modtype_labelcollapsed .collapse.show {
+    max-height: 500px;
+}
+/* Make the activity title visibly clickable in course editing mode. */
+.modtype_labelcollapsed .labelcollapsed-editlink:hover {
+    text-decoration: underline;
+}
+
+/* Badge sits next to Moodle's editable title, not inside its link/input. */
+.modtype_labelcollapsed .labelcollapsed-edit-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 4px;
+}
+.modtype_labelcollapsed .labelcollapsed-edit-badge {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    font-weight: bold;
+    padding: 4px 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+.modtype_labelcollapsed .labelcollapsed-edit-row .inplaceeditable,
+.modtype_labelcollapsed .labelcollapsed-edit-row .inplaceeditable-form {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 0;
+}
+.modtype_labelcollapsed .labelcollapsed-edit-row .inplaceeditable-form input {
+    width: 280px;
+    max-width: 100%;
+    margin: 0;
+}
